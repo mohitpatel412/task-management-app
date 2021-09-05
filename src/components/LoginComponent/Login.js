@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { userSignin } from "../../actions/userActions";
-import { useHistory } from "react-router";
 
 function Login() {
   const dispatch = useDispatch();
-  const history = useHistory();
-  //   const userData = JSON.parse(localStorage.getItem("userData"));
-  const userInfo = useSelector((state) => state.userLogin.userData);
-  useEffect(() => {
-    if (userInfo) {
-      history.push("/todo");
-    }
-  });
+  //   const history = useHistory();
+  //   //   const userData = JSON.parse(localStorage.getItem("userData"));
+  //   //   //   const userInfo = useSelector((state) => state.userLogin.userData);
+  //   //   useEffect(() => {
+  //   //     if (userData) {
+  //   //       history.push("/todo");
+  //   //     }
+  //   //   });
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -67,7 +66,6 @@ function Login() {
             <div
               onClick={(e) => {
                 handleLogin(e);
-                history.push("/todo");
               }}
               className="text-white w-full bg-blue-500 py-2 rounded-lg cursor-pointer mt-5 md:mt-2 lg:mt-5 text-center"
               style={{ backgroundColor: "#00dbd0" }}

@@ -28,6 +28,7 @@ export const userRegister =
       dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
       dispatch({ type: USER_SIGNIN_SUCCESS, payload: data });
       localStorage.setItem("userData", JSON.stringify(data));
+      window.location.href = "/todo";
     } catch (error) {
       dispatch({
         type: USER_REGISTER_FAIL,
@@ -51,6 +52,7 @@ export const userSignin = (email, password) => async (dispatch) => {
     );
     dispatch({ type: USER_SIGNIN_SUCCESS, payload: data });
     localStorage.setItem("userData", JSON.stringify(data));
+    window.location.href = "/todo";
   } catch (error) {
     dispatch({
       type: USER_SIGNIN_FAIL,

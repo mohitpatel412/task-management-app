@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { userRegister } from "../../actions/userActions";
 
 function Register() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const userInfo = useSelector((state) => state.userLogin.userData);
-  useEffect(() => {
-    if (userInfo) {
-      history.push("/todo");
-    }
-  });
+  //   const userInfo = useSelector((state) => state.userLogin.userData);
+  //   useEffect(() => {
+  //     if (userInfo) {
+  //       history.push("/todo");
+  //     }
+  //   });
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

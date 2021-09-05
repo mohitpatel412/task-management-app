@@ -2,16 +2,15 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { signout } from "../../actions/userActions";
-import { useHistory } from "react-router";
 
 function NavLinks({ colorchange }) {
   const dispatch = useDispatch();
-  const history = useHistory();
   const userInfo = useSelector((state) => state.userLogin.userData);
-  // const userData = JSON.parse(localStorage.getItem("userData"));
+  const userData = JSON.parse(localStorage.getItem("userData"));
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
+  console.log(userInfo);
   return (
     <div>
       <NavLink
@@ -46,13 +45,14 @@ function NavLinks({ colorchange }) {
         </h1>
       </NavLink>
 
-      {userInfo ? (
+      {userInfo && userData ? (
         <div className="inline-flex">
           <div className="mx-2">Welcome, {userInfo.name}</div>
           <button
             onClick={() => {
               dispatch(signout());
-              history.push("/login");
+              // history.push("/login");
+              window.location.href = "/login";
             }}
             className="px-4 mx-2 inline-flex items-center py-1 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-600 rounded-md dark:bg-gray-800 hover:bg-blue-500 dark:hover:bg-gray-700 focus:outline-none focus:bg-blue-500 dark:focus:bg-gray-700"
             style={{ backgroundColor: "#00dbd0" }}
