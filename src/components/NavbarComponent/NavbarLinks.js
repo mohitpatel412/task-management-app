@@ -10,7 +10,7 @@ function NavLinks({ colorchange }) {
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
-  console.log(userInfo);
+  // console.log(userInfo);
   return (
     <div>
       <NavLink
