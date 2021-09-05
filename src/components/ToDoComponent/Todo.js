@@ -29,7 +29,11 @@ function Todo() {
           ) : (
             <div className="flex flex-wrap">
               {todos.map((todo) => (
-                <TodoCard todo={todo} setCurrentId={setCurrentId} />
+                <TodoCard
+                  key={todo._id}
+                  todo={todo}
+                  setCurrentId={setCurrentId}
+                />
               ))}
             </div>
           )}

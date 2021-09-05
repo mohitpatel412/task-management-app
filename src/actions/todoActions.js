@@ -6,11 +6,14 @@ import { FETCH_ALL, CREATE, UPDATE, DELETE } from "../constants/todoConstants";
 export const fetchTodos = (userInfo) => async (dispatch) => {
   // console.log(userInfo.token);
   try {
-    const data = await axios.get("http://localhost:1027/todos", {
-      headers: {
-        Authorization: `Bearer ${userInfo.token}`,
-      },
-    });
+    const data = await axios.get(
+      "https://staging-todo-app.herokuapp.com/todos",
+      {
+        headers: {
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      }
+    );
     // console.log(data.data);
 
     dispatch({ type: FETCH_ALL, payload: data.data });
@@ -21,12 +24,16 @@ export const fetchTodos = (userInfo) => async (dispatch) => {
 
 export const createTodo = (todo, userInfo) => async (dispatch) => {
   try {
-    const { data } = await axios.post("http://localhost:1027/todos", todo, {
-      headers: {
-        Authorization: `Bearer ${userInfo.token}`,
-        "Content-Type": "application/json",
-      },
-    });
+    const { data } = await axios.post(
+      "https://staging-todo-app.herokuapp.com/todos",
+      todo,
+      {
+        headers: {
+          Authorization: `Bearer ${userInfo.token}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
     dispatch({ type: CREATE, payload: data });
   } catch (error) {
     console.log(error);
@@ -39,7 +46,7 @@ export const updateTodo =
     // console.log(id);
     try {
       const { data } = await axios.put(
-        `http://localhost:1027/todos/${id}`,
+        `https://staging-todo-app.herokuapp.com/todos/${id}`,
 
         {
           title: title,
@@ -63,7 +70,7 @@ export const updateTodo =
 
 export const deleteTodo = (id, userInfo) => async (dispatch) => {
   try {
-    await axios.delete(`http://localhost:1027/todos/${id}`, {
+    await axios.delete(`https://staging-todo-app.herokuapp.com/todos/${id}`, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
         "Content-Type": "application/json",

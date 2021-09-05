@@ -16,12 +16,15 @@ export const userRegister =
       payload: { name, email, password, confirmPassword },
     });
     try {
-      const { data } = await axios.post("http://localhost:1027/api/register", {
-        name,
-        email,
-        password,
-        confirmPassword,
-      });
+      const { data } = await axios.post(
+        "https://staging-todo-app.herokuapp.com/api/register",
+        {
+          name,
+          email,
+          password,
+          confirmPassword,
+        }
+      );
       dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
       dispatch({ type: USER_SIGNIN_SUCCESS, payload: data });
       localStorage.setItem("userData", JSON.stringify(data));
@@ -39,10 +42,13 @@ export const userRegister =
 export const userSignin = (email, password) => async (dispatch) => {
   dispatch({ type: USER_SIGNIN_REQUEST, payload: { email, password } });
   try {
-    const { data } = await axios.post("http://localhost:1027/api/signin", {
-      email,
-      password,
-    });
+    const { data } = await axios.post(
+      "https://staging-todo-app.herokuapp.com/api/signin",
+      {
+        email,
+        password,
+      }
+    );
     dispatch({ type: USER_SIGNIN_SUCCESS, payload: data });
     localStorage.setItem("userData", JSON.stringify(data));
   } catch (error) {
