@@ -8,7 +8,7 @@ function NavLinks({ colorchange }) {
   const dispatch = useDispatch();
   const history = useHistory();
   const userInfo = useSelector((state) => state.userLogin.userData);
-  const userData = JSON.parse(localStorage.getItem("userData"));
+  // const userData = JSON.parse(localStorage.getItem("userData"));
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
@@ -46,7 +46,7 @@ function NavLinks({ colorchange }) {
         </h1>
       </NavLink>
 
-      {userData ? (
+      {userInfo ? (
         <div className="inline-flex">
           <div className="mx-2">Welcome, {userInfo.name}</div>
           <button
