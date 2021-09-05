@@ -36,9 +36,6 @@ const Navbar = () => (
   >
     <div className="h-16 flex justify-between justify-items-center">
       <div className="inline-flex py-3">
-        <div>
-          <img className="w-12 h-12" src="/images/Group 220.png" alt="Logo" />
-        </div>
         <div className="text-3xl pl-2 align-middle select-none font-bold">
           TODO
         </div>
