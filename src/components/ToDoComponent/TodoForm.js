@@ -75,7 +75,7 @@ function TodoForm({ currentId, setCurrentId }) {
         <form>
           <div className="flex flex-col font-bold items-center md:ml-6 md:px-12 lg:px-0 lg:ml-0">
             <div className="text-2xl lg:text-4xl mb-3 lg:mb-6 text-black">
-              Todo Form
+              Task Management Form
             </div>
 
             <div className="flex items-center border border-gray-400 rounded-full px-4 py-1 mx-auto my-2">
@@ -156,7 +156,7 @@ function TodoForm({ currentId, setCurrentId }) {
               style={{ backgroundColor: "#00dbd0" }}
             >
               <button type="submit" className="font-bold outline-none">
-                Create Todo
+                Create Task
               </button>
             </div>
           </div>

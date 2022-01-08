@@ -10,11 +10,11 @@ function Home() {
             <div className="w-full lg:w-1/2">
               <div className="lg:max-w-lg text-center">
                 <h1 className="text-2xl font-semibold text-gray-800 dark:text-white lg:text-3xl">
-                  Begin with your <span className="text-indigo-500">Todo</span>
+                  Begin with your <span className="text-indigo-500">Task</span>
                 </h1>
 
                 <p className="mt-4 text-gray-600 dark:text-gray-400">
-                  Add you daily todos via this{" "}
+                  Add you daily tasks via this{" "}
                   <span className="font-medium text-indigo-500">Web App</span>
                 </p>
 

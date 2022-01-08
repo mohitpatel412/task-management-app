@@ -28,7 +28,7 @@ function Todo() {
         <div className="lg:w-3/5">
           {!todos ? (
             <div className="text-center font-bold">
-              Nothing Here. Add your Todo
+              Nothing Here. Add your Task
             </div>
           ) : (
             <div className="flex flex-wrap">

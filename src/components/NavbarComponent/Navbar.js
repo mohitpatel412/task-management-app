@@ -37,7 +37,7 @@ const Navbar = () => (
     <div className="h-16 flex justify-between justify-items-center">
       <div className="inline-flex py-3">
         <div className="text-3xl pl-2 align-middle select-none font-bold">
-          TODO
+          Task Management
         </div>
       </div>
       <div className="hidden sm:flex text-lg py-3" id="">
